@@ -39,10 +39,13 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+# gem 'capistrano', group: :developmentng
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
 # Recommended by Heroku, see https://devcenter.heroku.com/articles/rails-integration-gems for more information.
 gem 'rails_12factor', group: :production
+
+# Easy integration for bootstrap. Makes upgrading as easy as updating the version number
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'

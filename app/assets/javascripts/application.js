@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require codemirror
 //= require firepad
-//= require_tree .
+// = require_tree .
+// = require twitter/bootstrap/carousel
