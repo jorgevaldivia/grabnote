@@ -52,3 +52,7 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 # User authentication
 gem 'devise'
+
+# Used for decorating models so that presentation code is stored separately
+# (not in model). 
+gem 'draper', '~> 1.3'

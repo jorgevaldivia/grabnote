@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   layout :set_layout
 
+  # Override devise's current_user method so that a decorated instance is
+  # returned instead.
+  def current_user
+    UserDecorator.decorate(super) unless super.nil?
+  end
+
   protected
 
   def set_layout
