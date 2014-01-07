@@ -3,19 +3,12 @@
     <div class="content-wrap">
       <h6>Sign up</h6>
 
-			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= semantic_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
   			<%= devise_error_messages! %>
-        
-        <%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "E-mail address" %>
-        <br/>
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-        <br/>
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password" %>
 
-        <%= render "devise/shared/links" %>
+        <%= f.inputs :first_name, :last_name, :email, :password, :password_confirmation %>
 
-
-        <div class='action'><%= f.submit "Sign up", class: "btn-glow primary signup" %></div>
+        <%= f.actions class: "actions" %>
       <% end %>
 
     </div>

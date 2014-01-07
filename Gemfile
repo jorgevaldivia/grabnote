@@ -56,3 +56,7 @@ gem 'devise'
 # Used for decorating models so that presentation code is stored separately
 # (not in model). 
 gem 'draper', '~> 1.3'
+
+# Simplify and make forms consistent
+gem 'formtastic'
+gem "formtastic-bootstrap"

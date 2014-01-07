@@ -3,21 +3,15 @@
     <div class="content-wrap">
       <h6>Sign in</h6>
 
-      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-        <%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "E-mail address" %>
-        <br/>
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      <%= semantic_form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
 
-        <% if devise_mapping.rememberable? -%>
-          <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-        <% end -%>
+        <%= f.inputs :email, :password %>
+        <%= f.check_box :remember_me %>&nbsp; <%= f.label :remember_me, style: "float: none;" %>
 
-        <%= render "devise/shared/links" %>
+        <%= f.actions class: "actions" %>
 
-
-        <div class='action'><%= f.submit "Sign in", class: "btn-glow primary signup" %></div>
+        <%#= render "devise/shared/links" %>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -92,17 +92,19 @@
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="personal-info.html">Personal info</a></li>
-                    <li><a href="#">Account settings</a></li>
-                    <li><a href="#">Billing</a></li>
-                    <li><a href="#">Export your data</a></li>
-                    <li><a href="#">Send feedback</a></li>
+                    <li>
+                      <a href="personal-info.html">
+                        <i class="icon-user"></i>
+                        Personal info
+                      </a>
+                    </li>
+                    <li>
+                      <a href="personal-info.html">
+                        <i class="icon-key"></i>
+                        Update Password
+                      </a>
+                    </li>
                 </ul>
-            </li>
-            <li class="settings hidden-xs hidden-sm">
-                <a href="personal-info.html" role="button">
-                    <i class="icon-cog"></i>
-                </a>
             </li>
             <li class="settings hidden-xs hidden-sm">
                 <%= link_to(destroy_user_session_path, :method => :delete) do %>

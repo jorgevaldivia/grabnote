@@ -63,6 +63,7 @@ body {
   font-weight: 600;
 }
 .login-wrapper .box input[type="text"],
+.login-wrapper .box input[type="email"],
 .login-wrapper .box input[type="password"] {
   font-size: 15px;
   height: 40px;
@@ -71,6 +72,7 @@ body {
   padding-left: 12px;
 }
 .login-wrapper .box input[type="text"]:focus,
+.login-wrapper .box input[type="email"]:focus,
 .login-wrapper .box input[type="password"]:focus {
   border: 1px solid #28a0e5;
   outline: none;
@@ -101,7 +103,8 @@ body {
   letter-spacing: 0px;
   font-size: 14px;
 }
-.login-wrapper .box .action {
+.login-wrapper .box .action,
+.login-wrapper .box .actions {
   border-top: 1px solid #d3d7db;
   background-color: #f4f5f6;
   margin: 0px -36px;

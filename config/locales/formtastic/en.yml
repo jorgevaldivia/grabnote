@@ -1,0 +1,19 @@
+en:
+  formtastic:
+    hints:
+      user:
+    placeholders:
+      post:
+        title: "Title your post"
+        slug: "Leave blank for an automatically generated slug"
+      user:
+        email: "you@yours.com"
+        first_name: "Henry"
+        last_name: "Jones"
+        password: "********"
+        password_confirmation: "********"
+    actions:
+      create: "Save Changes"
+      update: "Save changes"
+      reset: "Reset form"
+      cancel: "Cancel and go back"
