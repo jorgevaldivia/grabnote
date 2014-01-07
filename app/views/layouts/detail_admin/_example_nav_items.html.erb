@@ -105,8 +105,8 @@
                 </a>
             </li>
             <li class="settings hidden-xs hidden-sm">
-                <a href="signin.html" role="button">
-                    <i class="icon-share-alt"></i>
-                </a>
+                <%= link_to(destroy_user_session_path, :method => :delete) do %>
+                  <i class="icon-share-alt"></i>
+                <% end %>
             </li>
         </ul>

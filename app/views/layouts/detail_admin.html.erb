@@ -6,13 +6,14 @@
   <body>
 
     <%= render partial: "layouts/detail_admin/nav" %>
-
-    <!-- main container -->
+      <!-- main container -->
     <div class="content">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      
-      <%= yield %>
+      <div id="pad-wrapper">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+      </div>
     </div>
 
   </body>

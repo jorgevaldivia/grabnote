@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="login-bg">
+  <head>
+    <%= render partial: "layouts/detail_admin/head" %>
+    <!-- this page specific styles -->
+    <%= stylesheet_link_tag    "detail_admin/signup", media: "all" %>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="header">
+      <a href="<%= root_path %>">
+        <i class="icon-pencil"></i>&nbsp;
+        Grabnote&nbsp;
+        <small class="beta">beta</small>
+      </a>
+    </div>
+
+    <%= yield %>
+    
+    <!-- <div class="login-wrapper">
+      <div class="box">
+        <div class="content-wrap"> -->
+<!--             <h6>Sign Up</h6>
+            <input class="form-control" type="text" placeholder="E-mail address">
+            <input class="form-control" type="password" placeholder="Password">
+            <input class="form-control" type="password" placeholder="Confirm Password">
+            <div class="action">
+                <a class="btn-glow primary signup" href="index.html">Sign up</a>
+            </div>                 -->
+        <!-- </div>
+      </div>
+
+      <div class="already">
+        <p>Already have an account?</p>
+        <a href="<%= new_user_session_path %>">Sign in</a>
+      </div>
+    </div> -->
+
+  </body>
+</html>
