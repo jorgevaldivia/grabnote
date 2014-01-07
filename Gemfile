@@ -44,8 +44,15 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Recommended by Heroku, see https://devcenter.heroku.com/articles/rails-integration-gems for more information.
-gem 'rails_12factor', group: :production
+group :production do
+	# Recommended by Heroku, see https://devcenter.heroku.com/articles/rails-integration-gems for more information.
+	gem 'rails_12factor'
+end
+
+group :development, :test do
+	# test suite
+	gem "rspec-rails"
+end
 
 # Easy integration for bootstrap. Makes upgrading as easy as updating the version number
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
