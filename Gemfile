@@ -49,3 +49,6 @@ gem 'rails_12factor', group: :production
 
 # Easy integration for bootstrap. Makes upgrading as easy as updating the version number
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
+
+# User authentication
+gem 'devise'
