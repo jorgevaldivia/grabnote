@@ -1,8 +1,5 @@
 .row
   .col-md-7.personal-info
-    / %h5.title
-    /   Personal Info
-
     = semantic_form_for @user, url: user_settings_path do |f|
       = f.error_messages
       = f.inputs :personal_info do

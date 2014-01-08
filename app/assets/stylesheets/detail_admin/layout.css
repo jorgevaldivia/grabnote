@@ -54,6 +54,22 @@ body.menu #sidebar-nav {
   box-shadow: none;
 }
 
+.bbox{
+  float: left;
+  min-width: 100px;
+  padding: 5px;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
 input.search {
   background: url("/assets/lens.png") #fcfcfc no-repeat 95%;
   box-shadow: none;
@@ -429,6 +445,21 @@ input.search {
   margin-top: 55px;
 }
 
+.content.editor{
+  background: transparent;
+  width: 820px;
+  margin: 0 auto;
+  border:0;
+  box-shadow: 0px 0px 0px 0px #f1f1f3;
+  box-shadow: 0px 8px 6px 0px #f1f1f3;
+  height: 1080px;
+  margin-bottom: 20px;
+}
+
+.editor #pad-wrapper{
+  margin: 0 auto;
+}
+
 #pad-wrapper.full{
   /*padding: 0;
   margin: 0;*/
@@ -587,3 +618,4 @@ input.search {
     float: left;
   }
 }
+

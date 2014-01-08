@@ -13,7 +13,9 @@
 //= require jquery
 //= require angular
 //= require angular-route
+//= require angular-resource
 //= require jquery_ujs
+//= require angularjs/rails/resource
 //= require codemirror
 //= require firepad
 //= require_tree .

@@ -19,33 +19,35 @@
 
     </header>
     <!-- end navbar -->
-    <!-- sidebar -->
-    <div id="sidebar-nav">
-      <ul id="dashboard-menu">
-        <li <%= "class=active" if controller.class == HomeController %>>
-          <!-- <div class="pointer">
-            <div class="arrow"></div>
-            <div class="arrow_border"></div>
-          </div> -->
-          <a href="<%= root_path %>">
-            <i class="icon-home"></i>
-            <span><%= t("menu.home") %></span>
-          </a>
-        </li> 
+    <% if sidebar %>
+      <!-- sidebar -->
+      <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+          <li <%= "class=active" if controller.class == HomeController %>>
+            <!-- <div class="pointer">
+              <div class="arrow"></div>
+              <div class="arrow_border"></div>
+            </div> -->
+            <a href="<%= root_path %>">
+              <i class="icon-home"></i>
+              <span><%= t("menu.home") %></span>
+            </a>
+          </li> 
 
-        <li>
-          <a href="<%= root_path %>">
-            <i class="icon-book"></i>
-            <span><%= t("menu.notebooks") %></span>
-          </a>
-        </li> 
+          <li>
+            <a href="<%= notebooks_path %>">
+              <i class="icon-book"></i>
+              <span><%= Notebook.model_name.human(count: 2) %></span>
+            </a>
+          </li> 
 
-        <li>
-          <a href="<%= root_path %>">
-            <i class="icon-cog"></i>
-            <span><%= t("menu.projects") %></span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- end sidebar -->
+          <li>
+            <a href="<%= root_path %>">
+              <i class="icon-cog"></i>
+              <span><%= t("menu.projects") %></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- end sidebar -->
+    <% end %>

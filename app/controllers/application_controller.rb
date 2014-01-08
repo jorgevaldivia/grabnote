@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   layout :set_layout
 
+  add_breadcrumb I18n.t("nav.home"), :root_path
+
   # Override devise's current_user method so that a decorated instance is
   # returned instead.
   def current_user

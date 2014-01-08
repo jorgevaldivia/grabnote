@@ -1,0 +1,22 @@
+%h1 Listing notebook_notes
+
+%table
+  %tr
+    %th User
+    %th Notebook
+    %th Name
+    %th Token
+    %th
+    %th
+    %th
+
+  - @notebook_notes.each do |notebook_note|
+    %tr
+      %td= notebook_note.user
+      %td= notebook_note.notebook
+      %td= notebook_note.name
+      %td= notebook_note.token
+
+%br
+
+= link_to 'New Note', new_notebook_note_path
