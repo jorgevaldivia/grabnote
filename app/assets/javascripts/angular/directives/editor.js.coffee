@@ -1,8 +1,7 @@
 # Module with methods relating to the editor.
-angular.module("extensions.editor", [])
 
 # Shared directive methods go here.
-.controller("EditorController", ["$scope", ($scope) ->
+grabnote.controller("EditorController", ["$scope", ($scope) ->
 ])
 
 # Render the editor. The gist of it is that firepad and codeMirror instances

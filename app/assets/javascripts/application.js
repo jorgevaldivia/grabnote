@@ -13,12 +13,10 @@
 //= require jquery
 //= require angular
 //= require angular-route
+//= require angular-resource
 //= require jquery_ujs
 //= require angularjs/rails/resource
 //= require codemirror
 //= require firepad
 //= require_tree .
 //= require twitter/bootstrap/carousel
-
-// Init Angular app
-app = angular.module("grabnote", ["ngResource", "rails", "extensions.editor"])
