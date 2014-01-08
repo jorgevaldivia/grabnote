@@ -85,3 +85,147 @@
     left: 0px;
   }
 }
+
+/* Forms Showcase */
+
+.form-page .form-wrapper {
+  margin-bottom: 40px;
+}
+.form-page .form-wrapper .field-box {
+  margin-bottom: 30px;
+  margin-left: 0;
+  float: left;
+  width: 100%;
+}
+/*.form-page .form-wrapper label {*/
+label {
+  display: inline-block;
+  float: left;
+  font-weight: 600;
+  cursor: auto;
+  font-size: 12px;
+  width: 140px;
+  text-align: left;
+}
+.form-page .form-wrapper input:-moz-placeholder {
+  font-style: italic;
+}
+.form-page .form-wrapper input:-ms-input-placeholder {
+  font-style: italic;
+}
+.form-page .form-wrapper input::-webkit-input-placeholder {
+  font-style: italic;
+}
+.form-page .form-wrapper .predefined {
+  position: relative;
+}
+.form-page .form-wrapper .predefined input {
+  padding-left: 40px;
+}
+.form-page .form-wrapper .predefined .value {
+  position: absolute;
+  top: 6px;
+}
+.form-page .form-wrapper label.checkbox {
+  cursor: pointer;
+  color: #555;
+}
+.form-page .form-wrapper label.radio {
+  position: relative;
+  left: -20px;
+  width: 100%;
+  cursor: pointer;
+  color: #555;
+}
+.form-page .form-wrapper label.checkbox,
+.form-page .form-wrapper label.radio {
+  font-weight: lighter;
+}
+.form-page .form-wrapper label.checkbox input[type="checkbox"],
+.form-page .form-wrapper label.checkbox input[type="radio"],
+.form-page .form-wrapper label.radio input[type="checkbox"],
+.form-page .form-wrapper label.radio input[type="radio"] {
+  font-size: large;
+  margin-left: 0px;
+}
+.form-page .form-wrapper .wysi-column {
+  float: left;
+  width: 75%;
+}
+.form-page .form-wrapper .column.pull-right label {
+  display: block;
+  width: 100%;
+}
+.form-page .form-wrapper .column.pull-right .ui-select {
+  width: 250px;
+}
+.form-page .form-wrapper .column.pull-right .input-group {
+  margin-bottom: 10px;
+  width: 250px;
+}
+.form-page .form-wrapper .column.pull-right .input-datepicker {
+  width: 250px;
+}
+.form-page .form-wrapper .select2-container {
+  margin-left: 0px;
+}
+
+/*Responsive*/
+@media (max-width: 767px) {
+  .form-page .form-wrapper label.radio {
+    left: 0px;
+  }
+}
+
+form .controls{
+  margin-left: 180px;
+}
+
+form .control-group{
+  margin-bottom: 18px;
+}
+
+form .control-label{
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+form legend{
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 18px !important;
+  font-size: 18px;
+  line-height: 36px;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+form .actions{
+  text-align: right;
+}
+
+form .form-errors ul{
+  list-style-type: disc;
+  margin-left: 15px;
+}
+
+/* Compact forms like signup */
+form.compact .control-label{
+  float: left;
+  width: 100px;
+  padding-top: 5px;
+  text-align: left;
+}
+
+form.compact .controls{
+  margin-left: 120px;
+}
+
+form.compact .actions{
+  text-align: inherit;
+}

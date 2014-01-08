@@ -20,4 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+        profile: Profile
+
+    attributes:
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+        time_zone: "Time Zone"
+
+  success_notice:
+    create: "%{name} successfully added."
+    update: "%{name} successfully updated."
+    destroy: "%{name} successfully deleted."
+
+  errors:
+    template:
+      header: "Please fix errors below and try again:"

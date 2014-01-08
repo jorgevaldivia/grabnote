@@ -1,0 +1,10 @@
+.login-wrapper
+  .box
+    .content-wrap
+      = semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html:{ class: "compact" } do |f|
+        = devise_error_messages!
+
+        = f.inputs :sign_up do
+          = f.inputs :first_name, :last_name, :email, :password, :password_confirmation
+
+        = f.actions class: "actions"

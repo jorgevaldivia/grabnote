@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="Reportame">
   <head>
-  	<%= render partial: "layouts/detail_admin/head" %>
+    <%= render partial: "layouts/detail_admin/head" %>
   </head>
   <body>
 
     <%= render partial: "layouts/detail_admin/nav" %>
-
-		<!-- main container -->
+      <!-- main container -->
     <div class="content">
-    	<%= yield %>
+      <div id="pad-wrapper">
+        <% if notice.present? %>
+          <p class="alert alert-success">
+            <i class="icon-ok-sign"></i>
+            <%= notice %>
+          </p>
+        <% end %>
+
+        <% if alert.present? %>
+          <p class="alert alert-warning">
+            <i class="icon-warning-sign"></i>
+            <%= notice %>
+          </p>
+        <% end %>
+
+        <%= yield %>
+      </div>
     </div>
 
   </body>

@@ -44,8 +44,29 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Recommended by Heroku, see https://devcenter.heroku.com/articles/rails-integration-gems for more information.
-gem 'rails_12factor', group: :production
+group :production do
+	# Recommended by Heroku, see https://devcenter.heroku.com/articles/rails-integration-gems for more information.
+	gem 'rails_12factor'
+end
+
+group :development, :test do
+	# test suite
+	gem "rspec-rails"
+end
 
 # Easy integration for bootstrap. Makes upgrading as easy as updating the version number
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
+
+# User authentication
+gem 'devise'
+
+# Used for decorating models so that presentation code is stored separately
+# (not in model). 
+gem 'draper', '~> 1.3'
+
+# Simplify and make forms consistent
+gem 'formtastic'
+gem "formtastic-bootstrap"
+
+# Use HAML instead of erb for cleaner view templates
+gem "haml-rails"

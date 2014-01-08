@@ -1,0 +1,26 @@
+en:
+  formtastic:
+    titles:
+      user:
+        personal_info: Personal Info
+        sign_up: "Sign Up"
+        sign_in: "Sign In"
+    hints:
+      user:
+    placeholders:
+      post:
+        title: "Title your post"
+        slug: "Leave blank for an automatically generated slug"
+      user:
+        email: "you@yours.com"
+        first_name: "Henry"
+        last_name: "Jones"
+        password: "********"
+        password_confirmation: "********"
+    actions:
+      create: "Save Changes"
+      update: "Save Changes"
+      reset: "Reset form"
+      cancel: "Cancel and go back"
+      user:
+        update: "Update Settings"

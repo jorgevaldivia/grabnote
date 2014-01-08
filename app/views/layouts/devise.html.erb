@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="login-bg">
+  <head>
+    <%= render partial: "layouts/detail_admin/head" %>
+    <!-- this page specific styles -->
+    <%= stylesheet_link_tag    "detail_admin/signup", media: "all" %>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="header">
+      <a href="<%= root_path %>">
+        <i class="icon-pencil"></i>&nbsp;
+        Grabnote&nbsp;
+        <small class="beta">beta</small>
+      </a>
+    </div>
+
+    <%= yield %>
+    
+  </body>
+</html>

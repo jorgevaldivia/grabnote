@@ -1,0 +1,15 @@
+.login-wrapper
+  .box
+    .content-wrap
+      = semantic_form_for resource, as: resource_name, url: session_path(resource_name), html:{ class: "compact" } do |f|
+        = devise_error_messages!
+
+        = f.inputs :sign_in do
+          = f.inputs :email, :password
+          = f.check_box :remember_me
+          &nbsp;
+          = f.label :remember_me, style: "float: none;"
+
+        / = render "devise/shared/links"
+
+        = f.actions class: "actions"
