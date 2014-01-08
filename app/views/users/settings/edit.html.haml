@@ -4,6 +4,8 @@
     /   Personal Info
 
     = semantic_form_for @user, url: user_settings_path do |f|
+      = f.error_messages
       = f.inputs :personal_info do
         = f.inputs :first_name, :last_name
+        = f.input :time_zone, as: :time_zone
       = f.actions class: "actions"

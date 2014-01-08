@@ -204,3 +204,12 @@ form legend{
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
+
+form .actions{
+  text-align: right;
+}
+
+form .form-errors ul{
+  list-style-type: disc;
+  margin-left: 15px;
+}
