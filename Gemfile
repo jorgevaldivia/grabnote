@@ -70,3 +70,6 @@ gem "formtastic-bootstrap"
 
 # Use HAML instead of erb for cleaner view templates
 gem "haml-rails"
+
+# AngularJS
+gem "angularjs-rails"

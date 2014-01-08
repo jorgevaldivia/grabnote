@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require angular
+//= require angular-route
 //= require jquery_ujs
 //= require codemirror
 //= require firepad
-// = require_tree .
-// = require twitter/bootstrap/carousel
+//= require_tree .
+//= require twitter/bootstrap/carousel
