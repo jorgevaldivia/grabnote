@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
 
   add_breadcrumb I18n.t("nav.home"), :root_path
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+
   # Override devise's current_user method so that a decorated instance is
   # returned instead.
   def current_user
@@ -21,5 +24,11 @@ class ApplicationController < ActionController::Base
     else
       "detail_admin"
     end
+  end
+
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :first_name
+    devise_parameter_sanitizer.for(:sign_up) << :last_name
   end
 end
