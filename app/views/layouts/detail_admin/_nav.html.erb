@@ -34,9 +34,9 @@
         </li> 
 
         <li>
-          <a href="<%= root_path %>">
+          <a href="<%= notebooks_path %>">
             <i class="icon-book"></i>
-            <span><%= t("menu.notebooks") %></span>
+            <span><%= Notebook.model_name.human(count: 2) %></span>
           </a>
         </li> 
 

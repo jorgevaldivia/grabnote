@@ -1,4 +1,6 @@
 Grabnote::Application.routes.draw do
+  resources :notebooks
+
   resource :dashboard, :only => :show
   
   devise_for :users

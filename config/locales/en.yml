@@ -26,6 +26,9 @@ en:
         one: User
         other: Users
         profile: Profile
+      notebook:
+        one: Notebook
+        other: Notebooks
 
     attributes:
       user:
@@ -33,10 +36,20 @@ en:
         last_name: "Last Name"
         time_zone: "Time Zone"
 
+  nav:
+    home: "Home"
+
   success_notice:
     create: "%{name} successfully added."
     update: "%{name} successfully updated."
     destroy: "%{name} successfully deleted."
+
+  record:
+    new: "New %{name}"
+    save: "Save %{name}"
+    edit: "Edit %{name}"
+    update: "Update %{name}"
+    delete: "Delete %{name}"
 
   errors:
     template:

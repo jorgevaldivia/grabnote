@@ -5,6 +5,8 @@ en:
         personal_info: Personal Info
         sign_up: "Sign Up"
         sign_in: "Sign In"
+    notebook:
+      basics: basics
     hints:
       user:
     placeholders:
