@@ -2,6 +2,15 @@
   /* Default height for a firepad. */
   height: 400px;
   position: relative;
+
+  width: 100%;
+
+  background: transparent;
+}
+
+.firepad {
+  /*position: absolute; left: 0; top: 0; bottom: 0; right: 0; height: auto;*/
+  position: absolute; left: 0; top: 0; bottom: 0; right: 0; height: 1060px;
 }
 
 .firepad {
@@ -17,6 +26,21 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+
+  border: 1px solid #dae3e9;
+
+  background-color: #fff;
+  margin-top: 10px;
+
+  /*box-shadow: -3px 3px 3px -2px #f1f1f3;*/
+  -webkit-transition: margin-left .3s ease;
+  -moz-transition: margin-left .3s ease;
+  -o-transition: margin-left .3s ease;
+  -ms-transition: margin-left .3s ease;
+  transition: margin-left .3s ease;
+
+  padding: 10px;
 }
 
 .firepad-richtext .CodeMirror {

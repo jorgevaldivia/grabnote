@@ -1,0 +1,2 @@
+module Notebook::NotesHelper
+end

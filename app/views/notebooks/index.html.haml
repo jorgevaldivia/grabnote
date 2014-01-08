@@ -1,27 +1,6 @@
 = title Notebook.model_name.human(count: 2), "icon-book"
 
-%h1 Listing notebooks
+- @notebooks.each do |notebook|
+  .div
+    = link_to notebook.name, notebook
 
-%table
-  %tr
-    %th User
-    %th Name
-    %th Description
-    %th Token
-    %th
-    %th
-    %th
-
-  - @notebooks.each do |notebook|
-    %tr
-      %td= notebook.user
-      %td= notebook.name
-      %td= notebook.description
-      %td= notebook.token
-      %td= link_to 'Show', notebook
-      %td= link_to 'Edit', edit_notebook_path(notebook)
-      %td= link_to 'Destroy', notebook, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Notebook', new_notebook_path

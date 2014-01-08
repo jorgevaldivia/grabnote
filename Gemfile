@@ -73,3 +73,9 @@ gem "haml-rails"
 
 # Makes it easy to add breadcrumbs
 gem "breadcrumbs_on_rails"
+
+# Injects Angular.js into your asset pipeline as well as other Angular modules.
+gem "angularjs-rails", "~> 1.2.0"
+
+# A small AngularJS add-on for integrating with Rails via JSON more easily.
+gem "angularjs-rails-resource", "~> 0.2.2"

@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108021730) do
+ActiveRecord::Schema.define(version: 20140108030629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notebook_notes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "notebook_id"
+    t.string   "name"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notebook_notes", ["notebook_id"], name: "index_notebook_notes_on_notebook_id", using: :btree
+  add_index "notebook_notes", ["user_id"], name: "index_notebook_notes_on_user_id", using: :btree
 
   create_table "notebooks", force: true do |t|
     t.integer  "user_id"

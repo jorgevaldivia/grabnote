@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="Grabnote">
+  <head>
+    <%= render partial: "layouts/detail_admin/head" %>
+  </head>
+  <body>
+
+    <%= render partial: "layouts/detail_admin/nav", locals: {sidebar: false} %>
+      <!-- main container -->
+    <div class="content editor">
+      <div id="pad-wrapper">
+        <%= yield %>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -10,6 +10,6 @@ module HasToken
   private
 
   def set_token
-    token = SecureRandom.urlsafe_base64(16)
+    self.token = SecureRandom.urlsafe_base64(16)
   end
 end

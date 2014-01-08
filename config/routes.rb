@@ -1,5 +1,7 @@
 Grabnote::Application.routes.draw do
-  resources :notebooks
+  resources :notebooks do
+    resources :notes, controller: "notebook/notes"
+  end
 
   resource :dashboard, :only => :show
   

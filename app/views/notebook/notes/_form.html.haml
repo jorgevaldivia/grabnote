@@ -1,0 +1,22 @@
+= form_for @notebook_note do |f|
+  - if @notebook_note.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@notebook_note.errors.count, "error")} prohibited this notebook_note from being saved:"
+      %ul
+        - @notebook_note.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :notebook
+    = f.text_field :notebook
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :token
+    = f.text_field :token
+  .actions
+    = f.submit 'Save'
