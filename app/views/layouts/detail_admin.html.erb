@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="Grabnote">
+<html>
   <head>
     <%= render partial: "layouts/detail_admin/head" %>
   </head>
-  <body>
-
+  <body ng-app="grabnote">
     <%= render partial: "layouts/detail_admin/nav", locals: {sidebar: true} %>
       <!-- main container -->
     <div class="content">
@@ -28,4 +27,8 @@
     </div>
 
   </body>
+  <!-- Include Firebase -->
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+  <%= javascript_include_tag "application" %>
 </html>

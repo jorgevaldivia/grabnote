@@ -11,14 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require angular
-//= require angular-resource
+//= require angular-route
+//= require jquery_ujs
 //= require angularjs/rails/resource
 //= require codemirror
 //= require firepad
-// = require_tree .
-// = require twitter/bootstrap/carousel
+//= require_tree .
+//= require twitter/bootstrap/carousel
 
 // Init Angular app
-app = angular.module("Grabnote", ["ngResource", "rails", "extensions.editor"])
+app = angular.module("grabnote", ["ngResource", "rails", "extensions.editor"])
