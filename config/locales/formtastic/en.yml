@@ -3,6 +3,8 @@ en:
     titles:
       user:
         personal_info: Personal Info
+        sign_up: "Sign Up"
+        sign_in: "Sign In"
     hints:
       user:
     placeholders:

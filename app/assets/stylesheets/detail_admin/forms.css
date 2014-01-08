@@ -213,3 +213,19 @@ form .form-errors ul{
   list-style-type: disc;
   margin-left: 15px;
 }
+
+/* Compact forms like signup */
+form.compact .control-label{
+  float: left;
+  width: 100px;
+  padding-top: 5px;
+  text-align: left;
+}
+
+form.compact .controls{
+  margin-left: 120px;
+}
+
+form.compact .actions{
+  text-align: inherit;
+}

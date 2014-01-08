@@ -40,4 +40,4 @@ en:
 
   errors:
     template:
-      header: "Please fix the following errors:"
+      header: "Please fix errors below and try again:"
