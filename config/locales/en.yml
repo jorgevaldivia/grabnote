@@ -20,3 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+        profile: Profile
+
+  success_notice:
+    create: "%{name} successfully added."
+    update: "%{name} successfully updated."
+    destroy: "%{name} successfully deleted."

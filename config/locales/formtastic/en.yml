@@ -1,5 +1,8 @@
 en:
   formtastic:
+    titles:
+      user:
+        personal_info: Personal Info
     hints:
       user:
     placeholders:
@@ -14,6 +17,8 @@ en:
         password_confirmation: "********"
     actions:
       create: "Save Changes"
-      update: "Save changes"
+      update: "Save Changes"
       reset: "Reset form"
       cancel: "Cancel and go back"
+      user:
+        update: "Update Settings"

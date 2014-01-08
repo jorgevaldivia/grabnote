@@ -67,3 +67,6 @@ gem 'draper', '~> 1.3'
 # Simplify and make forms consistent
 gem 'formtastic'
 gem "formtastic-bootstrap"
+
+# Use HAML instead of erb for cleaner view templates
+gem "haml-rails"

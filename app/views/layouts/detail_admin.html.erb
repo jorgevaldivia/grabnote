@@ -9,8 +9,19 @@
       <!-- main container -->
     <div class="content">
       <div id="pad-wrapper">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if notice.present? %>
+          <p class="alert alert-success">
+            <i class="icon-ok-sign"></i>
+            <%= notice %>
+          </p>
+        <% end %>
+
+        <% if alert.present? %>
+          <p class="alert alert-warning">
+            <i class="icon-warning-sign"></i>
+            <%= notice %>
+          </p>
+        <% end %>
 
         <%= yield %>
       </div>
