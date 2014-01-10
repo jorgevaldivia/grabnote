@@ -2,5 +2,6 @@
   .col-md-7.personal-info
     = semantic_form_for @user, url: user_passwords_path do |f|
       = f.error_messages
-      = f.inputs :password, :password_confirmation
+      = f.inputs :password do
+        = f.inputs :current_password, :password, :password_confirmation
       = f.actions class: "actions"

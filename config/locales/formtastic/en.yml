@@ -18,6 +18,7 @@ en:
         email: "you@yours.com"
         first_name: "Henry"
         last_name: "Jones"
+        current_password: "********"
         password: "********"
         password_confirmation: "********"
     actions:

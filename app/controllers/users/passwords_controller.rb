@@ -8,7 +8,7 @@ class Users::PasswordsController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @user.update_with_password(user_params)
       # Sign in the user by passing validation in case his password changed
       sign_in @user, :bypass => true
       redirect_to edit_user_passwords_path, notice: t("success_notice.update", name: t("activerecord.attributes.user.password"))
@@ -26,7 +26,7 @@ class Users::PasswordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:password, :password_confirmation)
+      params.require(:user).permit(:current_password, :password, :password_confirmation)
     end
 
 

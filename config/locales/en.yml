@@ -35,6 +35,7 @@ en:
         first_name: "First Name"
         last_name: "Last Name"
         time_zone: "Time Zone"
+        current_password: "Current Password"
         password: "Password"
         password_confirmation: "Password Confirmation"
 
