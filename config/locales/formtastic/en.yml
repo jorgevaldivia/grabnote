@@ -5,6 +5,7 @@ en:
         personal_info: Personal Info
         sign_up: "Sign Up"
         sign_in: "Sign In"
+        password: "Password"
     notebook:
       basics: basics
     hints:
@@ -17,6 +18,7 @@ en:
         email: "you@yours.com"
         first_name: "Henry"
         last_name: "Jones"
+        current_password: "********"
         password: "********"
         password_confirmation: "********"
     actions:

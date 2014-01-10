@@ -35,9 +35,14 @@ en:
         first_name: "First Name"
         last_name: "Last Name"
         time_zone: "Time Zone"
+        current_password: "Current Password"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
 
   nav:
     home: "Home"
+    update_personal_info: "Personal Info"
+    update_password: "Update Password"
 
   success_notice:
     create: "%{name} successfully added."

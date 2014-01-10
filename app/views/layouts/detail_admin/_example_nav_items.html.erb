@@ -95,15 +95,17 @@
                     <li>
                       <a href="<%= edit_user_settings_path %>">
                         <i class="icon-user"></i>
-                        Personal info
+                        <%= t("nav.update_personal_info") %>
                       </a>
                     </li>
+
                     <li>
-                      <a href="personal-info.html">
+                      <a href="<%= edit_user_passwords_path %>">
                         <i class="icon-key"></i>
-                        Update Password
+                        <%= t("nav.update_password") %>
                       </a>
                     </li>
+
                 </ul>
             </li>
             <li class="settings hidden-xs hidden-sm">

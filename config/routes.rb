@@ -9,6 +9,7 @@ Grabnote::Application.routes.draw do
 
   namespace :users, :as => "user" do
     resource :settings, :only => [:edit, :update]
+    resource :passwords, :only => [:edit, :update]
   end
 
   get "home/index"
