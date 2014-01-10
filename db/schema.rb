@@ -55,6 +55,22 @@ ActiveRecord::Schema.define(version: 20140110074851) do
 
   add_index "notebooks", ["user_id"], name: "index_notebooks_on_user_id", using: :btree
 
+  create_table "project_collaborators", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",                           null: false
     t.string   "encrypted_password",     default: "",                           null: false

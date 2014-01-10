@@ -1,4 +1,6 @@
 Grabnote::Application.routes.draw do
+  resources :projects
+
   resources :notebooks do
     resources :notes, controller: "notebook/notes"
   end

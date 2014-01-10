@@ -29,6 +29,9 @@ en:
       notebook:
         one: Notebook
         other: Notebooks
+      project:
+        one: Project
+        other: Projects
 
     attributes:
       user:
@@ -38,9 +41,12 @@ en:
         current_password: "Current Password"
         password: "Password"
         password_confirmation: "Password Confirmation"
+      project:
+        name: 'Name'
 
   nav:
     home: "Home"
+    projects: "Projects"
     update_personal_info: "Personal Info"
     update_password: "Update Password"
 
