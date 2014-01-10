@@ -1,8 +1,15 @@
 .row
-  .col-md-7.personal-info
+  .col-md-12
+    %h5.title
+      %i.icon-user
+      = t "formtastic.titles.user.personal_info"
+.row
+  .col-md-9.personal-info.with-sidebar
     = semantic_form_for @user, url: user_settings_path do |f|
       = f.error_messages
-      = f.inputs :personal_info do
-        = f.inputs :first_name, :last_name
-        = f.input :time_zone, as: :time_zone
+      = f.inputs :first_name, :last_name
+      = f.input :time_zone, as: :time_zone
       = f.actions class: "actions"
+
+  .col-md-3.form-sidebar
+    hola
