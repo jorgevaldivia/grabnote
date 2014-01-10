@@ -76,3 +76,7 @@ gem "breadcrumbs_on_rails"
 
 # AngularJS
 gem "angularjs-rails"
+
+# Handles procfile .env file so that we can basically replciate the heroku
+# app.
+gem "foreman"
