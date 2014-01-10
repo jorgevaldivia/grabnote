@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
 
   has_many :notebooks
+
+  mount_uploader :profile_image, ProfileImageUploader
 end
