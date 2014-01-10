@@ -41,6 +41,7 @@ en:
 
   nav:
     home: "Home"
+    projects: "Projects"
     update_personal_info: "Personal Info"
     update_password: "Update Password"
 

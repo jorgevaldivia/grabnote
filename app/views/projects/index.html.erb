@@ -1,0 +1,11 @@
+<% if @projects.count == 0 %>
+  <div class="all-centered full-height">
+    <div class="text-centered">
+      <h1>No projects!</h1>
+      <%= link_to "Create one!", projects_path, method: :post,
+        class: 'btn btn-primary btn-large' %>
+    </div>
+  </div>
+<% else %>
+  hooray
+<% end %>
