@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(:user => current_user)
     saved = @project.save
-    @project.users << current_user unless !saved
+    @project.collaborators << current_user unless !saved
 
     respond_to do |format|
       if saved

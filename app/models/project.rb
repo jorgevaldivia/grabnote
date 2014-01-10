@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
   belongs_to :user
-  has_and_belongs_to_many :users
+  has_many :project_collaborators
+  has_many :collaborators, :through => :project_collaborators, source: :user
 end

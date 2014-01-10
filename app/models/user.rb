@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
 
   has_many :notebooks
-  has_and_belongs_to_many :projects
+  has_many :project_collaborators
+  has_many :projects, :through => :project_collaborators
 end
