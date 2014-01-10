@@ -80,3 +80,7 @@ gem "angularjs-rails"
 # Handles procfile .env file so that we can basically replciate the heroku
 # app.
 gem "foreman"
+
+# Background processor. Will be used when an action triggers a process that
+# is too time consuming for the user to wait with his browser window open.
+gem 'delayed_job_active_record'
