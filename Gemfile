@@ -87,3 +87,6 @@ gem 'delayed_job_active_record'
 
 # File uploads
 gem 'carrierwave'
+
+# Used with carrierwave to allow fileuploads to s3
+gem "fog", "~> 1.3.1"
