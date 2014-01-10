@@ -3,6 +3,10 @@
     %h5.title
       %i.icon-user
       = t "formtastic.titles.user.personal_info"
+
+%img.profile-image-small{src: @user.profile_image.small_thumb}
+%img.profile-image-medium{src: @user.profile_image.medium_thumb}
+
 .row
   .col-md-9.personal-info.with-sidebar
     = semantic_form_for @user, url: user_settings_path do |f|

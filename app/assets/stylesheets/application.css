@@ -20,4 +20,5 @@
 	*= require formtastic_custom
 	*= require formtastic-bootstrap
 	*= require detail_admin/forms
+	*= require users
  */
