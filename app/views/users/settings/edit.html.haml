@@ -9,6 +9,8 @@
       = f.error_messages
       = f.inputs :first_name, :last_name
       = f.input :time_zone, as: :time_zone
+      = f.input :profile_image, as: :file
+      = f.input :profile_image_cache, as: :hidden
       = f.actions class: "actions"
 
   .col-md-3.form-sidebar

@@ -90,3 +90,6 @@ gem 'carrierwave'
 
 # Used with carrierwave to allow fileuploads to s3
 gem "fog", "~> 1.3.1"
+
+# Process images (crop, resize, etc)
+gem "rmagick", "2.13.2"
