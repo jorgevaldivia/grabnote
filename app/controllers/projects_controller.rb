@@ -16,7 +16,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    respond_with(Project.new(:user => current_user))
+    @project = Project.new(:user => current_user)
+    @project.save
+    respond_with(@project)
   end
 
   # PATCH/PUT /projects/1
