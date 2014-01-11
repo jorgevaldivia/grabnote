@@ -18,3 +18,4 @@
 //= require firepad
 //= require_tree .
 //= require twitter/bootstrap/carousel
+//= require holder

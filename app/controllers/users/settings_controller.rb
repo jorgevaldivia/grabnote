@@ -4,6 +4,8 @@ class Users::SettingsController < ApplicationController
 
   respond_to :html
 
+  decorates_assigned :user
+
   def edit
   end
 

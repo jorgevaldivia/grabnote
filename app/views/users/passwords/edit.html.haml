@@ -4,11 +4,8 @@
       %i.icon-key
       = t "formtastic.titles.user.password"
 .row
-  .col-md-9.personal-info.with-sidebar
+  .col-md-9
     = semantic_form_for @user, url: user_passwords_path do |f|
       = f.error_messages
       = f.inputs :current_password, :password, :password_confirmation
       = f.actions class: "actions"
-
-  .col-md-3.form-sidebar
-    hola
