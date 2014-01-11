@@ -1,0 +1,16 @@
+
+$CONTAINER_HEIGHT: 620px;
+
+.all-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-height {
+  height: $CONTAINER_HEIGHT; 
+}
+
+.text-centered {
+  text-align: center;
+}
