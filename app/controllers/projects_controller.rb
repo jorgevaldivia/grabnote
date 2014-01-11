@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show]
+  respond_to :html, :json
 
   # GET /projects
   # GET /projects.json
@@ -15,19 +16,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(:user => current_user)
-    saved = @project.save
-    @project.collaborators << current_user unless !saved
-
-    respond_to do |format|
-      if saved
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @project }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with(Project.new(:user => current_user))
   end
 
   # PATCH/PUT /projects/1
@@ -47,11 +36,11 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    # @project.destroy
-    # respond_to do |format|
-    #  format.html { redirect_to projects_url }
-    #  format.json { head :no_content }
-    # end
+    @project.destroy
+    respond_to do |format|
+     format.html { redirect_to projects_url }
+     format.json { head :no_content }
+    end
   end
 
   private
