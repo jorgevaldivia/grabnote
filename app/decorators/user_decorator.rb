@@ -19,7 +19,7 @@ class UserDecorator < Draper::Decorator
   def profile_image_tag(size=:medium)
     h.capture_haml do
       if object.profile_image.present?
-        h.haml_tag "img.profile-image-#{size}", src: object.profile_image.send("#{size}_thumb")
+        h.haml_tag "img.profile-image-#{size}", src: object.profile_image.send("#{size}")
       else
         h.haml_tag "img.profile-image-#{size}", 
           src: "holder.js/#{profile_image_dimensions(size)}/grabnote-#{size}/text:#{initials}"

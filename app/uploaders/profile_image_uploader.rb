@@ -40,11 +40,11 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
   #   process :scale => [50, 50]
   # end
 
-  version :medium_thumb do
+  version :medium do
     process resize_to_fill: [100, 100]
   end
 
-  version :small_thumb, from_version: :medium_thumb do
+  version :small, from_version: :medium do
     process resize_to_fill: [50, 50]
   end
 
