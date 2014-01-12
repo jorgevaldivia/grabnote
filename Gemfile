@@ -60,6 +60,13 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # User authentication
 gem 'devise'
 
+# Authentication gems for allowing users to sign up/in with third party apps
+# such as facebook and twitter.
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'twitter'
+gem 'fb_graph'
+
 # Used for decorating models so that presentation code is stored separately
 # (not in model). 
 gem 'draper', '~> 1.3'
