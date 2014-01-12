@@ -40,3 +40,32 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+# Configure omniauth
+OmniAuth.config.test_mode = true
+
+OmniAuth.config.mock_auth[:twitter] = {
+  'uid' => '1337',
+  'provider' => 'twitter',
+  'info' => {
+    'name' => 'JonnieHallman',
+    "image" => "http://example.com/image.jpg"
+  },
+  'credentials' => {
+    'token' => "token",
+    'secret' => "secret",
+  }
+}
+OmniAuth.config.mock_auth[:facebook] = {
+  'uid' => '1337',
+  'provider' => 'facebook',
+  'info' => {
+    'first_name' => 'Henry',
+    'last_name' => 'Jones',
+    'email' => 'indiana@grabnote.com',
+    "image" => "http://example.com/image.jpg"
+  },
+  'credentials' => {
+    'token' => "token",
+  }
+}

@@ -64,6 +64,9 @@ group :development, :test do
   # Handles procfile .env file so that we can basically replicate the heroku
 	# app.
 	gem "foreman"
+
+	# Generate fake data for tests
+	gem "forgery"
 end
 
 # Easy integration for bootstrap. Makes upgrading as easy as updating the version number
