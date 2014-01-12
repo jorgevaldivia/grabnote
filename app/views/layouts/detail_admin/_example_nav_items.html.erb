@@ -100,12 +100,14 @@
                       </a>
                     </li>
 
-                    <li>
-                      <a href="<%= edit_user_passwords_path %>">
-                        <i class="icon-key"></i>
-                        <%= t("nav.update_password") %>
-                      </a>
-                    </li>
+                    <%- unless current_user.has_external_authentication? %>
+                        <li>
+                          <a href="<%= edit_user_passwords_path %>">
+                            <i class="icon-key"></i>
+                            <%= t("nav.update_password") %>
+                          </a>
+                        </li>
+                    <%- end %>
 
                 </ul>
             </li>

@@ -82,6 +82,8 @@ class AuthenticationsController < ApplicationController
 
     def authenticate_omni(provider)
       omni = request.env["omniauth.auth"]
+      # raise "\n******** #{omni.info.image}"
+      # raise env["omniauth.auth"].to_yaml
       authentication = Authentication.find_by_provider_and_uid(omni['provider'], omni['uid'])
 
       if authentication

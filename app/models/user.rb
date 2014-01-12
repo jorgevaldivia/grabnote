@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  include Omniauthable
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,13 +17,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_image, ProfileImageUploader
 
-  # Populate user fields from omniauth vars
-  def apply_omniauth(omni)
-    authentications.build(:provider => omni['provider'],
-    :uid => omni['uid'],
-    :token => omni['credentials'].token,
-    :token_secret => omni['credentials'].secret)
-  end
 
   # If user is singing up with omniauth, we dont want to require the password
   # just yet.
