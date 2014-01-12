@@ -9,7 +9,10 @@
           = f.check_box :remember_me
           &nbsp;
           = f.label :remember_me, style: "float: none;"
+          = render "devise/shared/forgot_password"
 
-        / = render "devise/shared/links"
 
         = f.actions class: "actions"
+
+  .no-account
+    = render "devise/shared/links"

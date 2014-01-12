@@ -148,6 +148,31 @@ body {
   border-bottom-color: #000;
 }
 
+.login-wrapper .no-account {
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 25px;
+}
+.login-wrapper .no-account p {
+  display: inline-block;
+  color: #aaaaaa;
+}
+.login-wrapper .no-account a {
+  color: #aaaaaa;
+  margin-left: 7px;
+  border-bottom: 1px solid;
+  transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  /* Firefox 4 */
+  -webkit-transition: all .1s linear;
+  /* Safari and Chrome */
+  -o-transition: all .1s linear;
+  /* Opera */
+  text-decoration: none;
+}
+
 /* responsive */
 @media (max-width: 767px) {
   .login-wrapper .box {

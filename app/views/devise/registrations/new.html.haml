@@ -5,6 +5,11 @@
         = devise_error_messages!
 
         = f.inputs :sign_up do
-          = f.inputs :first_name, :last_name, :email, :password, :password_confirmation
+          = f.inputs :first_name, :last_name, :email
+          - if resource.password_required?
+            = f.inputs :password, :password_confirmation
 
         = f.actions class: "actions"
+  
+  .no-account
+    = render "devise/shared/links"
