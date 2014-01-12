@@ -1,18 +1,18 @@
 .login-wrapper
   .box
     .content-wrap
-
       - if resource.has_external_authentication?
 
         = semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html:{ class: "compact" } do |f|
           = f.inputs :complete_profile do
-            = alert_block(type: :info, closable: false) do
-              = t(".complete_your_profile")
+            = f.error_messages
+            - unless resource.errors.any?
+              = alert_block(type: :info, closable: false) do
+                = t(".complete_your_profile")
             = f.inputs :first_name, :last_name, :email
 
           = f.actions class: "actions"
       - else
-
         = semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html:{ class: "compact" } do |f|
           = devise_error_messages!
 
