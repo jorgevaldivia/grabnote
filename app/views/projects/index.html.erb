@@ -7,5 +7,24 @@
     </div>
   </div>
 <% else %>
-  hooray, projects exist! Will show later.
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Last Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for project in @projects %>
+          <tr>
+            <td><%= link_to project.name, project %></td>
+            <td><%= project.updated_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "Create project", projects_path, method: :post,
+        class: 'btn btn-primary btn-large' %>
+  </div>
 <% end %>

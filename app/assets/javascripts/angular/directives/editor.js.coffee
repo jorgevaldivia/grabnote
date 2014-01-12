@@ -7,7 +7,7 @@ grabnote.controller("EditorController", ["$scope", ($scope) ->
 # Render the editor. The gist of it is that firepad and codeMirror instances
 # are created.
 .directive("grabnoteEditor", ["$compile", ($compile) ->
-  restrict: "C",
+  restrict: "CE",
   controller: "EditorController",
   link: (scope, element, attrs, controller) ->
     scope.backendUrl = ->
@@ -18,7 +18,8 @@ grabnote.controller("EditorController", ["$scope", ($scope) ->
     
     scope.firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, { richTextToolbar: true, richTextShortcuts: true })
     scope.firepad.on('ready', ->
+      # TODO(kevin): localize
       if (scope.firepad.isHistoryEmpty())
-        scope.firepad.setHtml('start typing')
+        scope.firepad.setHtml('Welcome! This document is a collaborative document, add classmates to start sharing!')
     )
 ])
