@@ -1,10 +1,25 @@
 .login-wrapper
   .box
     .content-wrap
-      = semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html:{ class: "compact" } do |f|
-        = devise_error_messages!
+      - if resource.has_external_authentication?
 
-        = f.inputs :sign_up do
-          = f.inputs :first_name, :last_name, :email, :password, :password_confirmation
+        = semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html:{ class: "compact" } do |f|
+          = f.inputs :complete_profile do
+            = f.error_messages
+            - unless resource.errors.any?
+              = alert_block(type: :info, closable: false) do
+                = t(".complete_your_profile")
+            = f.inputs :first_name, :last_name, :email
 
-        = f.actions class: "actions"
+          = f.actions class: "actions"
+      - else
+        = semantic_form_for resource, as: resource_name, url: registration_path(resource_name), html:{ class: "compact" } do |f|
+          = devise_error_messages!
+
+          = f.inputs :sign_up do
+            = f.inputs :first_name, :last_name, :email, :password, :password_confirmation
+
+          = f.actions class: "actions"
+  
+  .no-account
+    = render "devise/shared/links"

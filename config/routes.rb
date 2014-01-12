@@ -7,7 +7,7 @@ Grabnote::Application.routes.draw do
 
   resource :dashboard, :only => :show
   
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
 
   namespace :users, :as => "user" do
     resource :settings, :only => [:edit, :update]

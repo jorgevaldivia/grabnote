@@ -52,6 +52,21 @@ end
 group :development, :test do
 	# test suite
 	gem "rspec-rails"
+
+	# Mock stubbing/doubling
+	gem "factory_girl_rails"
+
+	# Guard allows us to keep an rspec server running while it watches files and
+	# automatically runs tests as files change.
+	gem "guard-spork"
+  gem "guard-rspec"
+
+  # Handles procfile .env file so that we can basically replicate the heroku
+	# app.
+	gem "foreman"
+
+	# Generate fake data for tests
+	gem "forgery"
 end
 
 # Easy integration for bootstrap. Makes upgrading as easy as updating the version number
@@ -59,6 +74,13 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 # User authentication
 gem 'devise'
+
+# Authentication gems for allowing users to sign up/in with third party apps
+# such as facebook and twitter.
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'twitter'
+gem 'fb_graph'
 
 # Used for decorating models so that presentation code is stored separately
 # (not in model). 
@@ -76,10 +98,6 @@ gem "breadcrumbs_on_rails"
 
 # AngularJS
 gem "angularjs-rails"
-
-# Handles procfile .env file so that we can basically replicate the heroku
-# app.
-gem "foreman"
 
 # Background processor. Will be used when an action triggers a process that
 # is too time consuming for the user to wait with his browser window open.

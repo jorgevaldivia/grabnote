@@ -6,6 +6,7 @@ en:
         sign_up: "Sign Up"
         sign_in: "Sign In"
         password: "Password"
+        complete_profile: "Complete Your Profile"
     labels:
       user:
         profile_image: Upload a different photo

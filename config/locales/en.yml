@@ -66,3 +66,8 @@ en:
   errors:
     template:
       header: "Please fix errors below and try again:"
+
+  devise:
+    registrations:
+      new:
+        complete_your_profile: "You're almost there! We just need learn a bit more about you."

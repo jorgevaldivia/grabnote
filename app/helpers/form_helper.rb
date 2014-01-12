@@ -6,8 +6,7 @@ module FormHelper
     if object && object.errors.any?
 
       alert_block(type: :danger, closable: false) do
-        haml_tag 'h4.alert-heading' do
-          haml_tag 'i.icon-exclamation-sign'
+        haml_tag 'span.alert-heading' do
           haml_concat(options[:header_message] || translate(:header, :scope => [:errors, :template]))
         end
         haml_tag :ul do
