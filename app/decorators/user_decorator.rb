@@ -17,13 +17,11 @@ class UserDecorator < Draper::Decorator
   #
   # size: Size of the image to return, accepts :small and medium
   def profile_image_tag(size=:medium)
-    h.capture_haml do
-      if object.profile_image.present?
-        h.haml_tag "img.profile-image-#{size}", src: object.profile_image.send("#{size}")
-      else
-        h.haml_tag "img.profile-image-#{size}", 
-          src: "holder.js/#{profile_image_dimensions(size)}/grabnote-#{size}/text:#{initials}"
-      end
+    if object.profile_image.present?
+      h.content_tag :img, "", class: "profile-image-#{size}", src: object.profile_image.send("#{size}")
+    else
+      h.content_tag :img, "", class: "profile-image-#{size}", 
+        src: "holder.js/#{profile_image_dimensions(size)}/grabnote-#{size}/text:#{initials}"
     end
   end
 
