@@ -12,7 +12,5 @@ class Project < ActiveRecord::Base
   protected
     def populate_project
       self.collaborators << self.user
-      self.notes << Project::Note.create(:name => 'Welcome',
-                                      :project => self)
     end
 end
