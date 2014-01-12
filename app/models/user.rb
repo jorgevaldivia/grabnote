@@ -5,11 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable  
 
-  # Only require fields if user is signing up directly (not via 3rd party)
-  validates :first_name, :last_name, presence: true#, 
-    #if: Proc.new{ |x| x.authentications.empty? }
+  validates :first_name, :last_name, presence: true
 
-  has_many :authentications
+  has_many :authentications, dependent: :destroy
   has_many :notebooks
   has_many :project_collaborators
   has_many :projects, :through => :project_collaborators
@@ -25,7 +23,7 @@ class User < ActiveRecord::Base
   # If user is singing up with omniauth, we dont want to require the password
   # just yet.
   def password_required?
-    (authentications.empty? || !password.blank?) && super
+    (!has_external_authentication? || !password.blank?) && super
   end
 
   # Update user password if user updated with omniauth
@@ -35,5 +33,11 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
+
+  # Returns whether or not user authenticates via a third party
+  # (twitter/facebook)
+  def has_external_authentication?
+    authentications.any?
   end
 end

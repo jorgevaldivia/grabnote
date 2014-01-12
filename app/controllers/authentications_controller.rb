@@ -84,6 +84,7 @@ class AuthenticationsController < ApplicationController
         sign_in_and_redirect User.find(user.id)             
       else
         session[:omniauth] = omni.except('extra')
+        user.errors.messages.clear
         redirect_to new_user_registration_path
       end
     end 
