@@ -1,8 +1,18 @@
 .row
-  .col-md-7.personal-info
-    = semantic_form_for @user, url: user_settings_path do |f|
+  = semantic_form_for @user, url: user_settings_path do |f|
+    .col-md-3.avatar-box.col-md-offset-1.profile-image
+      = user.profile_image_tag
+      %br
+      %br
+      = f.input :profile_image, as: :file
+      = f.input :profile_image_cache, as: :hidden
+
+    .col-md-7.personal-info
+      %h5.title
+        %i.icon-user
+        = t "formtastic.titles.user.personal_info"
+
       = f.error_messages
-      = f.inputs :personal_info do
-        = f.inputs :first_name, :last_name
-        = f.input :time_zone, as: :time_zone
+      = f.inputs :first_name, :last_name
+      = f.input :time_zone, as: :time_zone
       = f.actions class: "actions"

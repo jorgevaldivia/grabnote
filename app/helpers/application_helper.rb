@@ -1,4 +1,11 @@
 module ApplicationHelper
+
+  def wide_content
+    if controller == Users::SettingsController
+      "wide_content"
+    end
+  end
+
   def alert_block(content_or_options_with_block = nil, options = { }, &block)
     render_alert('div.alert.alert-block.form-errors', content_or_options_with_block, options, &block)
   end
