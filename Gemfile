@@ -52,6 +52,18 @@ end
 group :development, :test do
 	# test suite
 	gem "rspec-rails"
+
+	# Mock stubbing/doubling
+	gem "factory_girl_rails"
+
+	# Guard allows us to keep an rspec server running while it watches files and
+	# automatically runs tests as files change.
+	gem "guard-spork"
+  gem "guard-rspec"
+
+  # Handles procfile .env file so that we can basically replicate the heroku
+	# app.
+	gem "foreman"
 end
 
 # Easy integration for bootstrap. Makes upgrading as easy as updating the version number
@@ -83,10 +95,6 @@ gem "breadcrumbs_on_rails"
 
 # AngularJS
 gem "angularjs-rails"
-
-# Handles procfile .env file so that we can basically replicate the heroku
-# app.
-gem "foreman"
 
 # Background processor. Will be used when an action triggers a process that
 # is too time consuming for the user to wait with his browser window open.

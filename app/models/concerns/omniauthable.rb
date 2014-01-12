@@ -3,9 +3,9 @@ module Omniauthable
   extend ActiveSupport::Concern# Populate user fields from omniauth vars
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'],
-    :uid => omni['uid'],
-    :token => omni['credentials'].token,
-    :token_secret => omni['credentials'].secret)
+      :uid => omni['uid'],
+      :token => omni['credentials'].token,
+      :token_secret => omni['credentials'].secret)
 
     self.send("set_#{omni['provider']}_info", omni)
   end
