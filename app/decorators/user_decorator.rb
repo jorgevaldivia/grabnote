@@ -15,7 +15,7 @@ class UserDecorator < Draper::Decorator
   # Render user profile image or a holder with the initials if user does not
   # have an image uploaded.
   #
-  # size: Size of the image to return, accepts :small and medium
+  # size: Size of the image to return, accepts :tiny, :small, and :medium
   def profile_image_tag(size=:medium)
     if object.profile_image.present?
       h.content_tag :img, "", class: "profile-image-#{size}", src: object.profile_image.send("#{size}")
@@ -31,6 +31,8 @@ class UserDecorator < Draper::Decorator
       "100x100"
     elsif size == :small
       "50x50"
+    elsif size == :tiny
+      "25x25"
     end
   end
 

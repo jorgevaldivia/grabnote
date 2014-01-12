@@ -75,6 +75,12 @@ var settings = {
       foreground: "#fff",
       size: 14
     },
+
+    "grabnote-tiny": {
+      background: "#7d91a8",
+      foreground: "#fff",
+      size: 10
+    },
     "industrial": {
       background: "#434A52",
       foreground: "#C2F200",
