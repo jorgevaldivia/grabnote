@@ -41,6 +41,7 @@ en:
         current_password: "Current Password"
         password: "Password"
         password_confirmation: "Password Confirmation"
+        profile_image: "Profile Image"
       project:
         name: 'Name'
 

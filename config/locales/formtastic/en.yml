@@ -7,6 +7,9 @@ en:
         sign_in: "Sign In"
         password: "Password"
         complete_profile: "Complete Your Profile"
+    labels:
+      user:
+        profile_image: Upload a different photo
     notebook:
       basics: basics
     hints:

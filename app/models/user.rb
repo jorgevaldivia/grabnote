@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :project_collaborators
   has_many :projects, :through => :project_collaborators
 
+  mount_uploader :profile_image, ProfileImageUploader
+
   # Populate user fields from omniauth vars
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'],

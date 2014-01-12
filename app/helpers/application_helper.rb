@@ -1,4 +1,11 @@
 module ApplicationHelper
+
+  def wide_content
+    if controller == Users::SettingsController
+      "wide_content"
+    end
+  end
+
   def title(title, icon = nil, subtitle = nil)
     if !title.is_a?(String) && title.respond_to?(:id)
       title = "#{title.class.model_name.human} ##{title.id}"
