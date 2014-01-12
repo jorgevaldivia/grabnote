@@ -4,51 +4,7 @@ class AuthenticationsController < ApplicationController
   # GET /authentications
   # GET /authentications.json
   def index
-    @authentications = Authentication.all
-  end
-
-  # GET /authentications/1
-  # GET /authentications/1.json
-  def show
-  end
-
-  # GET /authentications/new
-  def new
-    @authentication = Authentication.new
-  end
-
-  # GET /authentications/1/edit
-  def edit
-  end
-
-  # POST /authentications
-  # POST /authentications.json
-  def create
-    @authentication = Authentication.new(authentication_params)
-
-    respond_to do |format|
-      if @authentication.save
-        format.html { redirect_to @authentication, notice: 'Authentication was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @authentication }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @authentication.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /authentications/1
-  # PATCH/PUT /authentications/1.json
-  def update
-    respond_to do |format|
-      if @authentication.update(authentication_params)
-        format.html { redirect_to @authentication, notice: 'Authentication was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @authentication.errors, status: :unprocessable_entity }
-      end
-    end
+    @authentications = current_user.authentications.all
   end
 
   # DELETE /authentications/1
