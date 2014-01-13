@@ -37,7 +37,7 @@ module HasFirebase
 
   # Set the owner of the object in firebase
   def set_owner firebase
-    firebase.set(firebase_key, { owner_id: self.user_id })
+    firebase.update(firebase_key, { owner_id: self.user_id })
   end
 
   # Update the collaborators in firebase

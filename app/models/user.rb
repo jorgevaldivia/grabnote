@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_image, ProfileImageUploader
 
+  after_create :generate_firebase_auth_token
 
   # If user is singing up with omniauth, we dont want to require the password
   # just yet.
@@ -37,5 +38,23 @@ class User < ActiveRecord::Base
   # (twitter/facebook)
   def has_external_authentication?
     authentications.any?
+  end
+
+  def generate_firebase_auth_token
+    if firebase_auth_token_stale?
+      # Expire the token way in the future (year 2047)
+      options = {expires: 2430958469}
+      auth_data = {user_id: self.id}
+
+      generator = FirebaseToken::FirebaseTokenGenerator.new(ENV["FIREBASE_APP_SECRET"])
+
+      self.firebase_auth_token = generator.create_token(auth_data, options)
+      self.firebase_auth_token_generated_at = DateTime.now
+      self.save
+    end
+  end
+
+  def firebase_auth_token_stale?
+    self.firebase_auth_token_generated_at.blank? || self.firebase_auth_token_generated_at + 24.hours <= DateTime.now
   end
 end
