@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="card activity-feed">
+
+      <div class="card-title">
+        <h1>project feed</h1>
+      </div>
+
+      <div class="card-content">
+        <% for activity in @project.activities %>
+        <div class="activity <%= 'self' unless current_user != activity.user %> ">
+          <%= get_user_display_name activity %>
+          <%- to_activity_action activity %>
+          <%- link_to_item activity %>
+          <%= current_user.profile_image_tag :small %>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-md-4">
+    <div class="card">
+      <div class="card-title">
+        <h1>files</h1>
+      </div>
+    </div>
+  </div>
+</div>

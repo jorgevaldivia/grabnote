@@ -1,5 +1,26 @@
 
+$COLOR: #818c8c;
+$FONT_FAMILY: 'Varela', sans-serif;
+$FONT_SIZE: 12px;
+$BACKGROUND_COLOR: #edece7;
+
+$CARD_BACKGROUND_COLOR: #FFF;
+$CARD_BORDER: 1px SOLID #edf0f1;
+$CARD_BOX_SHADOW: 0 2px 14px -2px #edece7;
+$CARD_DROP_SHADOW_SIZE: 4px;
+$CARD_HORIZ_PADDING: 23px;
+$CARD_VERTICAL_PADDING: 32px;
+$CARD_PADDING: $CARD_VERTICAL_PADDING 23px;
+$CARD_TITLE_COLOR: #c65b32;
+$CARD_TITLE_FONT_SIZE: 18px;
+
 $CONTAINER_HEIGHT: 620px;
+
+body {
+  color: $COLOR;
+  font-size: $FONT_SIZE;
+  font-family: $FONT_FAMILY;
+}
 
 .all-centered {
   display: flex;
@@ -13,4 +34,30 @@ $CONTAINER_HEIGHT: 620px;
 
 .text-centered {
   text-align: center;
+}
+
+.card {
+  background-color: $CARD_BACKGROUND_COLOR;
+  border: $CARD_BORDER;
+  box-shadow: $CARD_BOX_SHADOW;
+  padding: $CARD_PADDING;
+  .card-title {
+    color: $CARD_TITLE_COLOR;
+    margin-bottom: $CARD_VERTICAL_PADDING;
+    h1 {
+      color: $CARD_TITLE_COLOR;
+      font-size: $CARD_TITLE_FONT_SIZE;
+    }
+  }
+}
+
+.activity {
+  img {
+    margin-right: $CARD_HORIZ_PADDING;
+  }
+  &.self {
+    img {
+      margin-left: $CARD_HORIZ_PADDING;
+    }
+  }
 }
