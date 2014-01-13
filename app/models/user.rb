@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
 
   has_many :authentications, dependent: :destroy
   has_many :notebooks
-  # has_many :project_collaborators
-  # has_many :projects, :through => :project_collaborators
 
   # Collaborations
   has_many :collaborator_joins
