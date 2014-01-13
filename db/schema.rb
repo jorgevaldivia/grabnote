@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113015951) do
+ActiveRecord::Schema.define(version: 20140113042740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20140113015951) do
   end
 
   add_index "authentications", ["user_id"], name: "index_authentications_on_user_id", using: :btree
+
+  create_table "collaborator_joins", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "collaboratable_id"
+    t.string   "collaboratable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collaborator_joins", ["user_id"], name: "index_collaborator_joins_on_user_id", using: :btree
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
