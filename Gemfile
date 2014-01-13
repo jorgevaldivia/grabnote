@@ -112,5 +112,5 @@ gem "fog", "~> 1.3.1"
 # Process images (crop, resize, etc)
 gem "rmagick", "2.13.2"
 
-# Generate auth tokens for firebase/firepad
-gem "firebase_token_generator"
+# API wrapper for firebase
+gem "firebase"
