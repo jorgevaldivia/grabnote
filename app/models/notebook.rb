@@ -1,4 +1,5 @@
 class Notebook < ActiveRecord::Base
+  include HasCollaborators
   include HasToken
 
   belongs_to :user
