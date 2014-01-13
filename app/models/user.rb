@@ -12,8 +12,14 @@ class User < ActiveRecord::Base
 
   has_many :authentications, dependent: :destroy
   has_many :notebooks
-  has_many :project_collaborators
-  has_many :projects, :through => :project_collaborators
+  # has_many :project_collaborators
+  # has_many :projects, :through => :project_collaborators
+
+  # Collaborations
+  has_many :collaborator_joins
+  has_many :note_collaborations, through: :collaborator_joins, source: :collaboratable, source_type: "Notebook::Note"
+  has_many :notebook_collaborations, through: :collaborator_joins, source: :collaboratable, source_type: "Notebook"
+  has_many :project_collaborations, through: :collaborator_joins, source: :collaboratable, source_type: "Project"
 
   mount_uploader :profile_image, ProfileImageUploader
 
