@@ -1,3 +1,5 @@
+require "#{Rails.root}/lib/firebase_token_generator.rb"
+
 # Common methods shared among objects that have are represented in firebase.
 module HasFirebase
   extend ActiveSupport::Concern
@@ -5,6 +7,13 @@ module HasFirebase
   included do
     after_create :set_firebase_data
     after_destroy :remove_firebase_data
+  end
+
+  # Update the collaborators in firebase
+  def update_firebase_collaborators
+    firebase = connect_to_firebase
+
+    firebase.update(firebase_key, {collaborators: Hash[self.collaborator_ids.map{ |id| [id, id]}] })
   end
 
   private
@@ -38,10 +47,5 @@ module HasFirebase
   # Set the owner of the object in firebase
   def set_firebase_owner firebase
     firebase.update(firebase_key, { owner_id: self.user_id })
-  end
-
-  # Update the collaborators in firebase
-  def update_firebase_collaborators firebase, collaborator_ids
-    firebase.update(firebase_key, {collaborators: Hash[x.map{ |y| [y, y]}] })
   end
 end

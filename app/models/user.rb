@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     if firebase_auth_token_stale?
       # Expire the token way in the future (year 2047)
       options = {expires: 2430958469}
-      auth_data = {user_id: self.id}
+      auth_data = {user_id: "#{self.id}"}
 
       generator = FirebaseToken::FirebaseTokenGenerator.new(ENV["FIREBASE_APP_SECRET"])
 

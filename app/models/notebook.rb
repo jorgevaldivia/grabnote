@@ -4,7 +4,8 @@ class Notebook < ActiveRecord::Base
   include HasFirebase
 
   belongs_to :user
-
+  has_many :notes
+  
   validates :name, presence: true
 
   def firebase_key
