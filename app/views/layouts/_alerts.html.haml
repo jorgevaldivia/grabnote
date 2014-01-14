@@ -1,0 +1,6 @@
+- if notice.present?
+  = alert_block(type: :success, closable: false) do
+    = notice
+- if alert.present?
+  = alert_block(type: :warning, closable: false) do
+    = alert

@@ -6,21 +6,9 @@
   <body ng-app="grabnote">
     <%= render partial: "layouts/detail_admin/nav", locals: {sidebar: true} %>
       <!-- main container -->
-    <div class="content <%= wide_content() %>">
+    <div class="content">
       <div id="pad-wrapper">
-        <% if notice.present? %>
-          <p class="alert alert-success">
-            <i class="icon-ok-sign"></i>
-            <%= notice %>
-          </p>
-        <% end %>
-
-        <% if alert.present? %>
-          <p class="alert alert-warning">
-            <i class="icon-warning-sign"></i>
-            <%= alert %>
-          </p>
-        <% end %>
+        <%= render partial: "layouts/alerts" %>
 
         <%= yield %>
       </div>
@@ -29,6 +17,5 @@
   </body>
   <!-- Include Firebase -->
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-
   <%= javascript_include_tag "application" %>
 </html>

@@ -18,4 +18,5 @@
 //= require firepad
 //= require_tree .
 //= require twitter/bootstrap/carousel
+//= require_directory ./angular/ui/
 //= require holder
