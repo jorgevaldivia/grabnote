@@ -1,1 +1,1 @@
-var grabnote = angular.module('grabnote', ['ngRoute']);
+var grabnote = angular.module('grabnote', ['ngRoute', 'ui.bootstrap']);

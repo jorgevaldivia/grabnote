@@ -1,10 +1,8 @@
 class Project < ActiveRecord::Base
+  include HasCollaborators
   include HasToken
 
   belongs_to :user
-  # TODO(kevin): Extract collaborators
-  has_many :project_collaborators
-  has_many :collaborators, :through => :project_collaborators, source: :user
   has_many :notes
   has_many :activities
 

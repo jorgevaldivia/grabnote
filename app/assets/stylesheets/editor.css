@@ -1,0 +1,38 @@
+.content.editor{
+  background: transparent;
+  /*width: 820px;*/
+  margin: 0 auto;
+  border:0;
+  box-shadow: 0px 0px 0px 0px #f1f1f3;
+  box-shadow: 0px 8px 6px 0px #f1f1f3;
+  height: 1080px;
+  margin-bottom: 20px;
+
+  min-width: 400px;
+  min-height: 620px;
+}
+
+.editor #pad-wrapper{
+  margin: 0 auto;
+  padding: 0;
+}
+
+.editor-right-sidebar{
+  margin-top: 80px;
+}
+
+.editor-right-sidebar .body{
+  /*background-color: #fff;
+  border: 1px solid #dae3e9;*/
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+
+.editor-right-sidebar .title h4{
+  width: 50px;
+  float: left;
+}
+
+.editor-right-sidebar i{
+  line-height: 25px;
+}

@@ -11,7 +11,7 @@ class Notebook::NotesController < ApplicationController
   # GET /notebook/notes/1
   # GET /notebook/notes/1.json
   def show
-    render 'show', layout: "editor"
+    render 'show', layout: "detail_editor"
   end
 
   # GET /notebook/notes/new
