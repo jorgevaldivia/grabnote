@@ -2,4 +2,15 @@
   .activity.self {
     text-align: right;
   }
+  input {
+    height: 32px;
+    width: 100%;
+  }
+  button {
+    padding: 5px 10px;
+  }
+}
+
+.activity-updates {
+  margin-bottom: 15px;
 }
