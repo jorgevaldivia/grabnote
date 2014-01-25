@@ -1,5 +1,8 @@
 Grabnote::Application.routes.draw do
-  resources :projects
+
+  resources :projects do
+    resources :comments, only: [:create, :destroy], controller: "project/comments"
+  end
 
   resources :notebooks do
     resources :notes, controller: "notebook/notes"
