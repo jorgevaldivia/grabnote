@@ -1,10 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :activity do
+  factory :project do
     user nil
-    project nil
-    action "MyString"
-    trackable nil
+    name "test_project"
+    id 1
   end
 end
