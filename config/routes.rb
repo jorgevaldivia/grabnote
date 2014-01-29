@@ -2,6 +2,7 @@ Grabnote::Application.routes.draw do
 
   resources :projects do
     resources :comments, only: [:create], controller: "project/comments"
+    resources :files, only: [:create], controller: "project/files"
   end
 
   resources :notebooks do
