@@ -1,4 +1,4 @@
-class Project::Comment < Activity
+class Project::Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
 end

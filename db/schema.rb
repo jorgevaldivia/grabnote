@@ -52,17 +52,6 @@ ActiveRecord::Schema.define(version: 20140125213053) do
 
   add_index "collaborator_joins", ["user_id"], name: "index_collaborator_joins_on_user_id", using: :btree
 
-  create_table "comments", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
-
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -108,6 +97,17 @@ ActiveRecord::Schema.define(version: 20140125213053) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "project_comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_comments", ["project_id"], name: "index_project_comments_on_project_id", using: :btree
+  add_index "project_comments", ["user_id"], name: "index_project_comments_on_user_id", using: :btree
 
   create_table "project_notes", force: true do |t|
     t.integer  "user_id"

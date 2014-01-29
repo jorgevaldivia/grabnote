@@ -29,13 +29,12 @@ describe Project::CommentsController do
 
   describe "POST create" do
     it "creates an activity and a comment in a project" do
+      user = FactoryGirl.build(:user)
+      sign_in user
       Project.stub(:find).with('1').and_return FactoryGirl.build(:project)
-      expect {
-        post :create, {project_id: 1, project_comment: valid_attributes}, :format => :json
-      }.to change(Project::Comment, :count).by(1)
-      #comment = Project::Comment.create! valid_attributes
-      #post :create, {}, valid_session
-      #assigns(:notebook_notes).should eq([note])
+      post :create, {project_id: 1, project_comment: valid_attributes, format: :json}
+      comment = Activity.first.trackable
+      comment.body.should eq(valid_attributes[:body])
     end
   end
 end
