@@ -14,8 +14,10 @@ class Project::CommentsController < ApplicationController
       user: current_user,
       project: @project)
     if @comment.save and @activity.save
+      puts "Saved comment!"
       respond_with(@comment, location: nil)
     else
+      puts "didn't save comment!"
       respond_with({error: 'Cannot process request'}, status: 503)
     end
   end
