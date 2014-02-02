@@ -8,14 +8,6 @@
             <h1>project feed</h1>
           </div>
           <div class="card-content">
-            <% for activity in @project.activities %>
-              <div class="row activity <%= 'self' unless current_user != activity.user %> ">
-                <%= get_user_display_name activity %>
-                <%- to_activity_action activity %>
-                <%- link_to_item activity %>
-                <%= current_user.profile_image_tag :small %>
-              </div>
-            <% end %>
             <div class="activity">
               <%= current_user.profile_image_tag :small %>
               <p class="comment">
