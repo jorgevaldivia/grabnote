@@ -36,15 +36,14 @@ describe ProjectsController do
       user = FactoryGirl.create(:user)
       sign_in user
 
-      project = FactoryGirl.create(:project, user: user)
+      project = FactoryGirl.create(:project, user: user, id: 1)
       comment = FactoryGirl.create(:project_comment, project: project, user: user)
       upload = FactoryGirl.create(:project_upload, project: project, user: user)
 
       Project.stub(:find).with('1').and_return project
-      puts Project::Comment.first
+      get :show, {:id => 1}
 
-      get :index, {:id => '1'}
-      assigns(:projects).should eq([project])
+      assigns(:project).should eq(project)
     end
   end
 end

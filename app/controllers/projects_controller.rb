@@ -48,7 +48,9 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      puts "fetching project!!"
+      @project = Project.includes(:activities).find(params[:id])
+      puts "activities are #{@project.activities.first.trackable}"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

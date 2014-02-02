@@ -9,7 +9,7 @@ FactoryGirl.define do
     trackable nil
 
     after(:create) do |activity|
-      project.activities << activity
+      activity.project.activities << activity
     end
   end
 
@@ -19,7 +19,7 @@ FactoryGirl.define do
     body "test comment"
 
     after(:create) do |comment|
-      create(:activity, trackable: comment)
+      create(:activity, trackable: comment, project: comment.project, user: comment.user)
     end
   end
 
@@ -28,13 +28,12 @@ FactoryGirl.define do
     project nil
 
     after(:create) do |upload|
-      create(:activity, trackable: upload)
+      create(:activity, trackable: upload, project: upload.project, user: upload.user)
     end
   end
 
   factory :project do
     user
     name "test_project"
-    id 1
   end
 end

@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications, dependent: :destroy
   has_many :notebooks
+  has_many :projects
 
   # Collaborations
   has_many :collaborator_joins
