@@ -1,4 +1,5 @@
 class Project::UploadsController < ApplicationController
+  include Trackable
   before_action :set_project
   respond_to :json
 
@@ -10,13 +11,8 @@ class Project::UploadsController < ApplicationController
       user: current_user,
       project: @project
     )
-    @activity = Activity.new(
-      action: 'create',
-      trackable: @upload,
-      user: current_user,
-      project: @project
-    )
-    if @upload.save and @activity.save
+    if @upload.save
+      track @upload
       respond_with(@file, location: nil)
     else
       respond_with({error: 'Cannot process request'}, status: 503)

@@ -1,4 +1,5 @@
 class Project::CommentsController < ApplicationController
+  include Trackable
   before_action :set_project
   respond_to :json
 
@@ -6,18 +7,11 @@ class Project::CommentsController < ApplicationController
     @comment = Project::Comment.new(
       body: project_comment_params[:body],
       user: current_user,
-      project: @project
-    )
-    @activity = Activity.new(
-      action: 'create',
-      trackable: @comment,
-      user: current_user,
       project: @project)
-    if @comment.save and @activity.save
-      puts "Saved comment!"
+    if @comment.save
+      track @comment
       respond_with(@comment, location: nil)
     else
-      puts "didn't save comment!"
       respond_with({error: 'Cannot process request'}, status: 503)
     end
   end
