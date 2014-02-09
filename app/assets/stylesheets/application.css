@@ -14,13 +14,13 @@
 	*= require detail_admin/bootstrap-overrides
 	*= require detail_admin/jquery-ui-1.10.2.custom
 	*= require detail_admin/font-awesome.min.css
-	*= require global
 	*= require detail_admin/layout
 	*= require detail_admin/elements
 	*= require detail_admin/icons
 	*= require formtastic_custom
 	*= require formtastic-bootstrap
 	*= require detail_admin/forms
+	*= require global
 	*= require editor
 	*= require users
 	*= require projects

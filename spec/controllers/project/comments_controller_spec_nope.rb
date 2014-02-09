@@ -18,32 +18,23 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe ProjectsController do
+describe Project::CommentsController do
   include Devise::TestHelpers
+  render_views
 
   # This should return the minimal set of attributes required to create a valid
-  # Project. As you add validations to Project, be sure to
+  # Project::Comment. As you add validations to Project::Comment, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { body: "some text" } }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # ProjectsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
-
-  describe "GET show" do
-    it "shows a project and its activities" do
-      user = FactoryGirl.create(:user)
+  describe "POST create" do
+    it "creates an activity and a comment in a project" do
+      user = FactoryGirl.build(:user)
       sign_in user
-
-      project = FactoryGirl.create(:project, user: user, id: 1)
-      comment = FactoryGirl.create(:project_comment, project: project, user: user)
-      upload = FactoryGirl.create(:project_upload, project: project, user: user)
-
-      Project.stub(:find).with('1').and_return project
-      get :show, {:id => 1}
-
-      assigns(:project).should eq(project)
+      Project.stub(:find).with('1').and_return FactoryGirl.build(:project)
+      post :create, {project_id: 1, project_comment: valid_attributes, format: :json}
+      comment = Activity.first.trackable
+      comment.body.should eq(valid_attributes[:body])
     end
   end
 end

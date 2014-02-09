@@ -3,12 +3,7 @@ class Project < ActiveRecord::Base
   include HasToken
 
   belongs_to :user
+  has_many :activities, order: 'created_at ASC'
+  has_many :comments
   has_many :notes
-
-  after_create :populate_project
-
-  protected
-    def populate_project
-      self.collaborators << self.user
-    end
 end

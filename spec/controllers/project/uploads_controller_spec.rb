@@ -18,32 +18,22 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe ProjectsController do
+describe Project::UploadsController do
   include Devise::TestHelpers
 
   # This should return the minimal set of attributes required to create a valid
-  # Project. As you add validations to Project, be sure to
+  # Project::Comment. As you add validations to Project::Comment, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { name: "MyFile.txt" } }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # ProjectsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
-
-  describe "GET show" do
-    it "shows a project and its activities" do
-      user = FactoryGirl.create(:user)
+  describe "POST create" do
+    it "creates an activity and a file in a project" do
+      user = FactoryGirl.build(:user)
       sign_in user
-
-      project = FactoryGirl.create(:project, user: user, id: 1)
-      comment = FactoryGirl.create(:project_comment, project: project, user: user)
-      upload = FactoryGirl.create(:project_upload, project: project, user: user)
-
-      Project.stub(:find).with('1').and_return project
-      get :show, {:id => 1}
-
-      assigns(:project).should eq(project)
+      Project.stub(:find).with('1').and_return FactoryGirl.build(:project)
+      post :create, {project_id: 1, project_upload: valid_attributes, format: :json}
+      file = Activity.first.trackable
+      file.name.should eq(valid_attributes[:name])
     end
   end
 end

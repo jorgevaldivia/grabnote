@@ -11,6 +11,21 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @new_comment = Project::Comment.new(:project => @project)
+    respond_to do |format|
+      format.html
+      format.json {
+        render :json => @project.to_json(
+          :include => {
+            activities: {
+              :include => [
+                :trackable,
+                :user => { :only => :profile_image }
+              ]
+            }
+          }
+        )}
+    end
   end
 
   # POST /projects
@@ -48,7 +63,7 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      @project = Project.includes(:activities).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
