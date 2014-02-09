@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require angular
-//= require angular-route
 //= require jquery_ujs
+//= require angular
+//= require angular-animate
 //= require codemirror
 //= require firepad
 //= require_tree .

@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-xs-12 col-md-8 activity-feed">
-
+ <!-- start left side -->
+  <div class="col-xs-12 col-md-8 activity-feed" ng-controller="ProjectActivityFeed as ctrl">
     <div class="row activity-updates">
       <div class="col-xs-12">
         <div class="card">
@@ -8,10 +8,11 @@
             <h1>project feed</h1>
           </div>
           <div class="card-content">
-            <div class="activity">
-              <%= current_user.profile_image_tag :small %>
-              <p class="comment">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum in sem at eleifend. Pellentesque non dui mollis massa facilisis consectetur vel a urna. Sed mi nulla, porta ut adipiscing a.
+            <div class="activity" ng-repeat="activity in ctrl.activities" ng-cloak>
+              <img ng-src="{{activity.user.profile_image.small.url}}"
+                class="profile-image-small" rel="user image">
+              <p class="comment" ng-show="ctrl.isComment(activity)">
+                {{activity.trackable.body}}
               </p>
             </div>
           </div>
@@ -20,16 +21,21 @@
     </div>
 
     <!-- input box -->
-    <div class="row ">
-      <div class="col-xs-10 col-md-10">
-        <input type="text" placeholder="Your message">
-      </div>
-      <div class="col-xs-2 col-md-2">
-        <button class="btn gn-btn-default">SEND</button>
-      </div>
+    <div class="row">
+      <%= form_for [@project, @new_comment], :url => project_comments_path(@project),
+        html: {name: 'newProjectForm', 'data-gn-rails-form' => 'test' } do |f| %>
+        <div class="col-xs-10 col-md-10">
+          <textarea name="body" placeholder="Your message.."
+            class="form-control" rows="3" ng-model="ctrl.newComment"></textarea>
+        </div>
+        <div class="col-xs-2 col-md-2">
+          <button type="button" class="btn gn-btn-default" ng-click="ctrl.addComment()">SEND</button>
+        </div>
+      <% end %>
     </div>
-
+    <!-- end input box -->
   </div>
+  <!-- end left side -->
 
   <div class="col-xs-12 col-md-4">
     <div class="card">

@@ -2,15 +2,28 @@
   .activity.self {
     text-align: right;
   }
-  input {
-    height: 32px;
+  textarea {
     width: 100%;
   }
   button {
     padding: 5px 10px;
+    float: right;
   }
 }
 
 .activity-updates {
   margin-bottom: 15px;
+}
+
+/* starting animations */
+.activity-updates .ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  opacity: 0;
+}
+
+/* destination animations */
+.activity-updates .ng-enter.ng-enter-active {
+  opacity: 1;
 }
