@@ -10,21 +10,21 @@
           <div class="card-content">
             <div class="activity" ng-repeat="activity in ctrl.activities" ng-cloak>
               <!-- other user activity -->
-              <div ng-show="currentUser.id != activity.user.id || true" class="other-user row">
-                <div class="col-xs-2 col-med-2">
-                  <img ng-src="{{activity.user.profile_image.small.url}}"
-                    class="profile-image-small" rel="user image">
-                </div>
-                <div class="col-xs-10 col-med-10">
-                  <div class="comment-container" ng-show="ctrl.isComment(activity)">
-                      {{activity.trackable.body}}
-                  </div>
+              <div ng-show="currentUser.id != activity.user.id || true" class="other-user">
+                <img ng-src="{{activity.user.profile_image.small.url}}"
+                  class="profile-image-small" rel="user image">
+                <div class="comment-container" ng-show="ctrl.isComment(activity)">
+                  <span class="comment">
+                    {{activity.trackable.body}}
+                  </span>
                 </div>
               </div>
-              <!-- current user activity
+              <!-- current user activity --
               <div ng-hide="currentUser.id != activity.user.id" class="current-user">
                 <div class="comment-container" ng-show="ctrl.isComment(activity)">
+                  <span class="comment">
                     {{activity.trackable.body}}
+                  </span>
                 </div>
                 <img ng-src="{{activity.user.profile_image.small.url}}"
                   class="profile-image-small" rel="user image">                
