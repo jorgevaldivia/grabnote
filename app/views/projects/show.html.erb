@@ -9,8 +9,7 @@
           </div>
           <div class="card-content">
             <div class="activity" ng-repeat="activity in ctrl.activities" ng-cloak>
-              <!-- other user activity -->
-              <div ng-show="currentUser.id != activity.user.id || true" class="other-user">
+              <div class="user-status" ng-class="{current: currentUser.id == activity.user.id}">
                 <img ng-src="{{activity.user.profile_image.small.url}}"
                   class="profile-image-small" rel="user image">
                 <div class="comment-container" ng-show="ctrl.isComment(activity)">
@@ -19,17 +18,6 @@
                   </span>
                 </div>
               </div>
-              <!-- current user activity --
-              <div ng-hide="currentUser.id != activity.user.id" class="current-user">
-                <div class="comment-container" ng-show="ctrl.isComment(activity)">
-                  <span class="comment">
-                    {{activity.trackable.body}}
-                  </span>
-                </div>
-                <img ng-src="{{activity.user.profile_image.small.url}}"
-                  class="profile-image-small" rel="user image">                
-              </div>
-              <!-- end current user activity -->
             </div>
           </div>
         </div>

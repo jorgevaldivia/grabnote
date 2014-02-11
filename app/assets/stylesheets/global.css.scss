@@ -67,12 +67,4 @@ body {
 
 .activity {
   overflow: auto;
-  .other-user img {
-    margin-right: $CARD_HORIZ_PADDING;
-    float: left;
-  }
-  .current-user img {
-    margin-left: $CARD_HORIZ_PADDING;
-    float: right;
-  }
 }
