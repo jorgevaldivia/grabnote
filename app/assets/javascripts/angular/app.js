@@ -9,6 +9,10 @@ grabnote.factory('csrf', ['$window', function($window) {
   };
 }]);
 
+grabnote.factory('user', ['$window', function($window) {
+  return angular.copy($window.currentUser);
+}]);
+
 grabnote.config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push(['$q', 'csrf', function($q, csrf) {
     return {

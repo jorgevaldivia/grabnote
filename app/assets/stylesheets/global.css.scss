@@ -66,12 +66,5 @@ body {
 }
 
 .activity {
-  img {
-    margin-right: $CARD_HORIZ_PADDING;
-  }
-  &.self {
-    img {
-      margin-left: $CARD_HORIZ_PADDING;
-    }
-  }
+  overflow: auto;
 }

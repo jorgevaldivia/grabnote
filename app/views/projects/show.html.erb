@@ -9,11 +9,15 @@
           </div>
           <div class="card-content">
             <div class="activity" ng-repeat="activity in ctrl.activities" ng-cloak>
-              <img ng-src="{{activity.user.profile_image.small.url}}"
-                class="profile-image-small" rel="user image">
-              <p class="comment" ng-show="ctrl.isComment(activity)">
-                {{activity.trackable.body}}
-              </p>
+              <div class="user-status" ng-class="{current: currentUser.id == activity.user.id}">
+                <img ng-src="{{activity.user.profile_image.small.url}}"
+                  class="profile-image-small" rel="user image">
+                <div class="comment-container" ng-show="ctrl.isComment(activity)">
+                  <span class="comment">
+                    {{activity.trackable.body}}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
