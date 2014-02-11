@@ -1,9 +1,10 @@
 grabnote.controller('ProjectActivityFeed',
-  ['$scope', '$http', '$interval', '$location',
-  function($scope, $http, $interval, $location) {
+  ['$scope', '$http', '$interval', '$location', 'user',
+  function($scope, $http, $interval, $location, user) {
 
     this.newComment = '';
     this.activities = [];
+    this.currentUser = user;
 
     var self = this;
     var poller;

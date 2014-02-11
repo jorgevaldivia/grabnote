@@ -66,12 +66,10 @@ body {
 }
 
 .activity {
-  img {
+  .other-user img {
     margin-right: $CARD_HORIZ_PADDING;
   }
-  &.self {
-    img {
-      margin-left: $CARD_HORIZ_PADDING;
-    }
+  .current-user img {
+    margin-left: $CARD_HORIZ_PADDING;
   }
 }

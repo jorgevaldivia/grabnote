@@ -20,4 +20,7 @@
   <!-- Include Firebase -->
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
   <%= javascript_include_tag "application" %>
+  <script>
+    window.currentUser = <%= current_user_json %>;
+  </script>
 </html>
