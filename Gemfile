@@ -111,3 +111,6 @@ gem "fog", "~> 1.3.1"
 
 # Process images (crop, resize, etc)
 gem "rmagick", "2.13.2"
+
+# API wrapper for firebase
+gem "firebase"

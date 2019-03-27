@@ -67,6 +67,9 @@ GEM
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
     erubis (2.7.0)
+    ethon (0.6.2)
+      ffi (>= 1.3.0)
+      mime-types (~> 1.18)
     excon (0.13.4)
     execjs (2.0.2)
     factory_girl (4.2.0)
@@ -82,6 +85,9 @@ GEM
       rack-oauth2 (>= 0.14.4)
       tzinfo
     ffi (1.9.0)
+    firebase (0.1.6)
+      json
+      typhoeus (>= 0.6.1)
     fog (1.3.1)
       builder
       excon (~> 0.13.0)
@@ -266,6 +272,8 @@ GEM
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
+    typhoeus (0.6.7)
+      ethon (~> 0.6.2)
     tzinfo (0.3.38)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
@@ -287,6 +295,7 @@ DEPENDENCIES
   draper (~> 1.3)
   factory_girl_rails
   fb_graph
+  firebase
   fog (~> 1.3.1)
   foreman
   forgery

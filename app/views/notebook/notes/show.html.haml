@@ -1,2 +1,2 @@
 .editor-wrapper
-	#editor.grabnote-editor{"key" => @notebook_note.editor_key}
+	#editor.grabnote-editor{"key" => @notebook_note.firebase_key, token: current_user.firebase_auth_token}

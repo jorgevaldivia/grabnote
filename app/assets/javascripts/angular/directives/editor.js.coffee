@@ -14,6 +14,15 @@ grabnote.controller("EditorController", ["$scope", ($scope) ->
       "grabnote.firebaseio.com/#{attrs.key}"
 
     firepadRef = new Firebase(scope.backendUrl())
+
+    # Log me in.
+    firepadRef.auth(attrs.token, ( (error) ->
+      if(error)
+        console.log("Login Failed!", error);
+      else
+        console.log("Login Succeeded!");
+    ))
+
     codeMirror = CodeMirror(document.getElementById(attrs.id), { lineWrapping: true })
     
     scope.firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, { richTextToolbar: true, richTextShortcuts: true })
